@@ -136,10 +136,18 @@ install_framework()
 #{Pod::Generator::ScriptPhaseConstants::INSTALL_BCSYMBOLMAP_METHOD}
 # Signs a framework with the provided identity
 code_sign_if_enabled() {
-  if [ -n "${EXPANDED_CODE_SIGN_IDENTITY:-}" -a "${CODE_SIGNING_REQUIRED:-}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
-    # Use the current code_sign_identity
-    echo "Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}"
-    local code_sign_cmd="/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS:-} --preserve-metadata=identifier,entitlements '$1'"
+  if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" -a "${CODE_SIGNING_REQUIRED:-}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
+              
+    # Save the param into a var  
+    local non_escaped_destination=$1
+    # Replace all the occurence of `'` with `'\''` to escape it
+    match="'"
+    replace="'\\''"
+    escaped_destination=${non_escaped_destination/$match/$replace}
+
+    # Use the current code_sign_identitiy
+    echo "Code Signing $escaped_destination with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}"
+    local code_sign_cmd="/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS:-} --preserve-metadata=identifier,entitlements '$escaped_destination'"
 
     if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
       code_sign_cmd="$code_sign_cmd &"
