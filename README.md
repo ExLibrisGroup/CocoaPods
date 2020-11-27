@@ -1,5 +1,9 @@
 ![CocoaPods Logo](https://raw.github.com/CocoaPods/shared_resources/master/assets/cocoapods-banner-readme.png)
 
+> **!! Warning !!**
+>
+> This is a custom version with a particular fix for the apps that contains a single quote in their names. To install it follow the [instructions](./exlibris-installation.md)
+
 ### CocoaPods: The Cocoa dependency manager
 
 [![Build Status](https://img.shields.io/github/workflow/status/CocoaPods/CocoaPods/Specs)](https://github.com/CocoaPods/CocoaPods/actions)
