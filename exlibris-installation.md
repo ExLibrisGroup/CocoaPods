@@ -4,7 +4,7 @@ These are instructions to install this custom version of cocoapods.
 
 ## Prerequisites
 
-You need `Ruby` installed in your Mac. Usually it comes along with the system, but it's recommended you install [rbenv](https://github.com/rbenv/rbenv#how-rbenv-hooks-into-your-shell) in order to use a more recent version of ruby. Also this will help you overcome all the problems with permissions. Follow the [installation instructions](https://github.com/rbenv/rbenv#installation) to install it. Once you have ran rbenv-doctor as mentioned in step 4 of installation paragraph you're good to go.
+You need `Ruby` installed in your Mac. Usually it comes along with the system, but it's recommended you install [rbenv](https://github.com/rbenv/rbenv#how-rbenv-hooks-into-your-shell) in order to use a more recent version of ruby. Also this will help you overcome all the problems with permissions. Follow the [installation instructions](https://github.com/rbenv/rbenv#installation) to install it. Once you have ran rbenv-doctor as mentioned in step 4 of installation paragraph you can now install a newer version of ruby. In our tests 2.7.2 worked perfectly, so at least this version. To do so type `rbenv install 2.7.2`. After the installation, we need to make this version global using `rbenv global 2.7.2`. Now if you run `rbenv version` you should see the version you just installed.
 
 ## Steps
 
