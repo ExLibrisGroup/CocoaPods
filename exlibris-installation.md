@@ -13,6 +13,6 @@ You need `Ruby` installed in your Mac. Usually it comes along with the system, b
 3. Verify that you don't have cocoapods already installed. Run `pod --version`. If the terminal replies with an error it means that is not installed. If instead it replies with a version you need to uninstall cocoapods using `gem uninstall cocoapods`.
 4. Run `sudo gem install bundler` to install bundler.
 5. Run `bundle exec rake bootstrap` to install all the dependencies of the project.
-6. Run `bundle exec rake build` to build the project. A file named `cocoapods-1.10.0.gem` will be created in the just created folder called `pkg`
-7. Run `gem install <PATH-TO-GEM>`. Replace `<PATH-TO-GEM>` with the path of the gem created in the previous step. In my case was `gem install /Users/paolo/Projects/CocoaPods/pkg/cocoapods-1.10.0.gem`
+6. Run `bundle exec rake build` to build the project. A file named `cocoapods-1.10.1.gem` will be created in the just created folder called `pkg`
+7. Run `gem install <PATH-TO-GEM>`. Replace `<PATH-TO-GEM>` with the path of the gem created in the previous step. In my case was `gem install /Users/paolo/Projects/CocoaPods/pkg/cocoapods-1.10.1.gem`
 8. Run `pod --version` to verify that you have this version installed.
